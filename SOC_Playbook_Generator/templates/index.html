@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOC Incident Response AI</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Poppins:wght@400;600;700&display=swap');
+
+        :root {
+            --primary-color: #00ff41; /* Matrix Green */
+            --secondary-color: #008F11;
+            --background-color: #0d0d0d; /* Pure Black */
+            --card-background: #1a1a1a;
+            --text-color: #e0e0e0;
+            --subtle-text-color: #888;
+            --border-color: #333;
+            --alert-color: #ff4444;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            background-image: radial-gradient(#1a1a1a 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .container {
+            background-color: var(--card-background);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.1); /* Green glow */
+            border: 1px solid var(--border-color);
+            width: 100%;
+            max-width: 800px;
+            text-align: left;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--text-color);
+            font-family: 'JetBrains Mono', monospace; /* Code font */
+            font-weight: 700;
+            font-size: 1.8rem;
+            margin: 0;
+            letter-spacing: -1px;
+        }
+        
+        .soc-highlight {
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(0, 255, 65, 0.4);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--primary-color);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            background-color: #000;
+            color: var(--primary-color); /* Green text like terminal */
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.95rem;
+            box-sizing: border-box;
+            resize: vertical;
+        }
+
+        textarea::placeholder {
+            color: #333;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 8px rgba(0, 255, 65, 0.2);
+        }
+
+        input[type="submit"] {
+            background-color: var(--secondary-color);
+            color: black;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-top: 20px;
+            width: 100%;
+            font-family: 'JetBrains Mono', monospace;
+            transition: all 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: var(--primary-color);
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.4);
+        }
+
+        .response-area {
+            margin-top: 40px;
+            background-color: #111;
+            padding: 25px;
+            border-radius: 4px;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        h2 {
+            color: var(--text-color);
+            font-size: 1.2rem;
+            margin-top: 0;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .response-text {
+            color: #ccc;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            white-space: pre-wrap;
+        }
+        
+        /* Markdown headings inside response */
+        .response-text strong {
+            color: var(--primary-color);
+        }
+
+        .creator-credit {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #555;
+            font-family: 'JetBrains Mono', monospace;
+        .response-text h3 {
+            color: var(--primary-color);
+            font-family: 'JetBrains Mono', monospace;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            border-bottom: 1px dashed #333;
+            padding-bottom: 5px;
+        }
+
+        /* (Bold) */
+        .response-text strong {
+            color: #fff;
+            font-weight: 700;
+        }
+
+        
+        .response-text ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .response-text li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+        
+        
+        .response-text ul li::marker {
+            color: var(--primary-color);
+        }
+        
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>SOC <span class="soc-highlight">Playbook Generator</span></h1>
+            <p style="color: #666; font-size: 0.9rem;">Automated Incident Response Plan (NIST Framework)</p>
+        </div>
+
+        <form method="post">
+            <label for="prompt">> ENTER INCIDENT SCENARIO:</label>
+            <textarea name="prompt" id="prompt" rows="4" placeholder="e.g., SIEM shows a successful login for user ahmed.h from 185.12.77.90 (Russia) while the user was asleep in Egypt.">{{ original_prompt }}</textarea>
+            <input type="submit" value="GENERATE IR PLAN">
+        </form>
+
+        {% if response_text %}
+        <div class="response-area">
+            <h2>> GENERATED PLAYBOOK:</h2>
+            <div class="response-text">
+                {{ response_text | safe }}
+            </div>
+        </div>
+        {% endif %}
+        
+        <footer class="creator-credit">
+            <p>Developed by <span style="color: #fff;">Zyad Roshdy</span></p>
+        </footer>
+        
+    </div>
+
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        
+        mermaid.initialize({ 
+            startOnLoad: false,
+            theme: 'base', 
+            securityLevel: 'loose',
+            flowchart: { 
+                curve: 'stepAfter', 
+                htmlLabels: true
+            },
+            themeVariables: {
+
+                primaryColor: '#0d0d0d',
+                primaryTextColor: '#e0e0e0',
+                primaryBorderColor: '#00ff41',
+                lineColor: '#00ff41',          
+                secondaryColor: '#1a1a1a',
+                tertiaryColor: '#111',
+                fontFamily: 'JetBrains Mono', 
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", async function() {
+
+            const mermaidBlocks = document.querySelectorAll('code.language-mermaid, code.mermaid');
+            
+            for (const block of mermaidBlocks) {
+
+                let content = block.textContent;
+                
+                const txt = document.createElement("textarea");
+                txt.innerHTML = content;
+                content = txt.value;
+
+                const pre = block.parentElement; 
+                const div = document.createElement('div');
+                div.className = 'mermaid';
+                div.textContent = content;
+                div.style.textAlign = 'center';
+                pre.replaceWith(div);
+            }
+            
+
+            try {
+                await mermaid.run();
+            } catch (err) {
+                console.error("Mermaid Drawing Failed:", err);
+            }
+        });
+    </script>
+</body>
+</html>
