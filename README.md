@@ -21,7 +21,7 @@ Leveraging **Google Gemini 2.5 Pro** and **Prompt Engineering**, the tool analyz
 ## 📸 Screenshots
 | Incident Input | Generated Playbook | Visual Flowchart |
 |:---:|:---:|:---:|
-| ![Input](screenshots/input_demo.png) | ![Playbook](screenshots/playbook_demo.png) | ![Flowchart](screenshots/chart_demo.png) |
+| ![Input](SOC_Playbook_Generator/screenshots/input_demo.png) | ![Playbook](SOC_Playbook_Generator/screenshots/playbook_demo.png) | ![Flowchart](SOC_Playbook_Generator/screenshots/chart_demo.png) |
 
 ## 🛠️ Tech Stack
 * **Backend:** Python, Flask
