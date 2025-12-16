@@ -18,7 +18,6 @@ Leveraging **Google Gemini 2.5 Pro** and **Prompt Engineering**, the tool analyz
 * **📊 Automated Visualization:** Converts text-based logic into professional flowcharts automatically.
 * **🌑 Cyberpunk UI:** A dark-themed, SOC-optimized interface built with HTML/CSS.
 
-
 ## 📸 Screenshots
 | Incident Input | Generated Playbook | Visual Flowchart |
 |:---:|:---:|:---:|
