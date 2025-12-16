@@ -63,6 +63,12 @@ Leveraging **Google Gemini 2.5 Pro** and **Prompt Engineering**, the tool analyz
 5.  **Start Using:**
     Open your browser and go to: `http://127.0.0.1:5000`
 
+    **Note:** if any error appears after clicking "GENERATE IR PLAN", you may need to change the model to gemini-2.5-flash
+    > main.py file > line 9 > make it like this:
+    ```bash
+    model = genai.GenerativeModel("models/gemini-2.5-flash")
+    ```
+
 ## 🧠 How It Works (The Logic)
 1.  **Input:** The user inputs a security scenario (e.g., "Employee at 192.168.20.33 clicked a phishing link and entered their credentials on 45.87.220.11").
 2.  **System Prompting:** The backend sends a structured prompt to Gemini 2.5 Pro, acting as a "Senior Incident Responder."
