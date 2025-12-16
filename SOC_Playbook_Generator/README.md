@@ -62,7 +62,7 @@ Leveraging **Google Gemini 2.5 Pro** and **Prompt Engineering**, the tool analyz
     Open your browser and navigate to `http://127.0.0.1:5000`.
 
 ## 🧠 How It Works (The Logic)
-1.  **Input:** The user inputs a security scenario (e.g., "Phishing email detected with C2 callback").
+1.  **Input:** The user inputs a security scenario (e.g., "Employee at 192.168.20.33 clicked a phishing link and entered their credentials on 45.87.220.11").
 2.  **System Prompting:** The backend sends a structured prompt to Gemini 2.5 Pro, acting as a "Senior Incident Responder."
 3.  **Processing:** * The model generates the text response in Markdown.
     * It constructs a `Mermaid.js` graph code based on strictly defined classes (Decision diamonds, Process rectangles).
@@ -71,9 +71,8 @@ Leveraging **Google Gemini 2.5 Pro** and **Prompt Engineering**, the tool analyz
 
 ## 👤 Author
 **Zyad Roshdy**
-* **Role:** SOC Analyst | Cybersecurity Researcher
+* **Role:** SOC Analyst | Cybersecurity Engineer
 * **LinkedIn:** https://www.linkedin.com/in/zyad-roshdy
-* **GitHub:** https://github.com/ZyadRoshdy
 
 ---
 *Made with ❤️ for the Blue Team Community.*
