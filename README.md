@@ -71,9 +71,8 @@ Leveraging **Google Gemini 2.5 Pro** and **Prompt Engineering**, the tool analyz
 
 ## 👤 Author
 **Zyad Roshdy**
-* **Role:** SOC Analyst | Cybersecurity Researcher
+* **Role:** SOC Analyst | Cybersecurity Engineer
 * **LinkedIn:** https://www.linkedin.com/in/zyad-roshdy
-* **GitHub:** https://github.com/ZyadRoshdy
 
 ---
 *Made with ❤️ for the Blue Team Community.*
