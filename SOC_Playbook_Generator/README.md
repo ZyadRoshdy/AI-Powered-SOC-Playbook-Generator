@@ -33,32 +33,37 @@ Leveraging **Google Gemini 2.5 Pro** and **Prompt Engineering**, the tool analyz
 * **Data Processing:** Markdown library for Python
 
 ## ⚙️ Installation & Setup
+1.  **Get the Project:**
+    * **Download:** Click the green **Code** button above, select **Download ZIP**, and extract the folder.
+    * **OR Clone:**
+        ```bash
+        git clone [https://github.com/ZyadRoshdy/SOC-Playbook-Generator.git](https://github.com/ZyadRoshdy/SOC-Playbook-Generator.git)
+        ```
 
-1.  **Clone the repository:**
+2.  **Install Libraries:**
+    Open your terminal (CMD) and run the following commands to install the necessary tools:
     ```bash
-    git clone [https://github.com/ZyadRoshdy/SOC-Playbook-Generator.git](https://github.com/ZyadRoshdy/SOC-Playbook-Generator.git)
-    cd SOC-Playbook-Generator
-    ```
-
-2.  **Install dependencies:**
-    ```bash
-    pip install -r requirements.txt
+    pip install flask
+    pip install google-generativeai
+    pip install markdown
     ```
 
 3.  **Configure API Key:**
-    * Get your API key from [Google AI Studio](https://aistudio.google.com/).
-    * Open `main.py` and replace the placeholder with your key (or use Environment Variables for security).
+    * Get your free API key from [Google AI Studio](https://aistudio.google.com/).
+    * Open the `main.py` file and replace the placeholder with your key.
     ```python
     genai.configure(api_key="YOUR_API_KEY_HERE")
     ```
 
-4.  **Run the application:**
+4.  **Run the Application:**
+    In the terminal, make sure you are inside the project folder, then run:
     ```bash
     python main.py
     ```
+    or you can run the file in Visual Studio Code
 
-5.  **Access the tool:**
-    Open your browser and navigate to `http://127.0.0.1:5000`.
+5.  **Start Using:**
+    Open your browser and go to: `http://127.0.0.1:5000`
 
 ## 🧠 How It Works (The Logic)
 1.  **Input:** The user inputs a security scenario (e.g., "Employee at 192.168.20.33 clicked a phishing link and entered their credentials on 45.87.220.11").
