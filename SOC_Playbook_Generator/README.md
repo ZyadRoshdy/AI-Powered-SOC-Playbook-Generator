@@ -60,7 +60,7 @@ Leveraging **Google Gemini 2.5 Pro** and **Prompt Engineering**, the tool analyz
     ```bash
     python main.py
     ```
-    or you can run the file in Visual Studio Code
+    Or you can run the file main.py in Visual Studio Code instead.
 
 5.  **Start Using:**
     Open your browser and go to: `http://127.0.0.1:5000`
