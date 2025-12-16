@@ -20,7 +20,6 @@ Leveraging **Google Gemini 2.5 Pro** and **Prompt Engineering**, the tool analyz
 * **🛡️ Robust Parsing Logic:** Implements custom JavaScript sanitization to render AI-generated diagrams without syntax errors.
 
 ## 📸 Screenshots
-
 | Incident Input | Generated Playbook | Visual Flowchart |
 |:---:|:---:|:---:|
 | ![Input](screenshots/input_demo.png) | ![Playbook](screenshots/playbook_demo.png) | ![Flowchart](screenshots/chart_demo.png) |
