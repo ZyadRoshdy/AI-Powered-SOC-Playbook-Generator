@@ -17,7 +17,7 @@ Leveraging **Google Gemini 2.5 Pro** and **Prompt Engineering**, the tool analyz
 * **📋 NIST Framework Alignment:** Ensures all generated playbooks follow industry-standard IR lifecycles.
 * **📊 Automated Visualization:** Converts text-based logic into professional flowcharts automatically.
 * **🌑 Cyberpunk UI:** A dark-themed, SOC-optimized interface built with HTML/CSS.
-* **🛡️ Robust Parsing Logic:** Implements custom JavaScript sanitization to render AI-generated diagrams without syntax errors.
+
 
 ## 📸 Screenshots
 | Incident Input | Generated Playbook | Visual Flowchart |
